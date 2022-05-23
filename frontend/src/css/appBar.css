@@ -1,0 +1,36 @@
+/* estilos referentes ao tamanho do texto ficar adaptado a resolução (desktop, mobile etc) */
+.v-application .display-normal-titulo {
+  font-size: 1.5625rem !important;
+  font-weight: 400;
+  line-height: 1.4em;
+  letter-spacing: normal !important;
+  font-family: "Roboto", sans-serif !important;
+  text-align: center;
+  color: white;
+  margin-left: 20%;
+}
+  
+.v-application .display-normal {
+  font-size: 1.2000rem !important;
+  font-weight: 400;
+  line-height: 1.4em;
+  letter-spacing: normal !important;
+  font-family: "Roboto", sans-serif !important;
+  color: white;
+}
+
+.v-application .display-pequeno {
+  font-size: .9625rem !important;
+  font-weight: 400;
+  line-height: 1.4em;
+  letter-spacing: normal !important;
+  font-family: "Roboto", sans-serif !important;
+  color: white;
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.3;
+}

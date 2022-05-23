@@ -1,0 +1,207 @@
+<!--
+
+=========================================================
+* Vuetify Material Dashboard - v2.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/vuetify-material-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.png">
+    <title>FleetDesk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<%= BASE_URL %>bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+    -->
+    <!-- <link rel="stylesheet" href="<%= BASE_URL %>materialdesignicons.min.css"> -->
+  </head>
+  <body>
+    <noscript>
+      <strong>Por favor habilite o javascript no seu browser para usar a aplicação.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+<style>
+  /* centralizar div na tela */
+  .centralizar { margin: auto; width: 95%;}
+
+  /* cor do background da barra do AppBar.vue */
+  #app-bar {
+    background: rgb(2,0,36); background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,3,48,1) 0%,
+      rgba(16,43,72,1) 0%, rgba(9,121,118,1) 0%, rgba(0,212,255,1) 100%);
+  }
+  
+  /* cor da barra dos títulos das páginas  */
+  #barraTopoTitulo { background-color: #01674E }
+  
+  /* listagem de registros usando v-data-table  */
+  #listagem  table thead tr th {
+    font-size: 11px !important;
+    background-color: lightgoldenrodyellow;
+    font-family: Verdana black;
+  }
+
+  .v-text-field--outlined >>> fieldset { border-color: black !important;}
+
+  .v-text-field >>> label { color: black !important }
+
+  .v-application .transparent { border-color: black !important;}
+
+  /*.v-input { height: 10px; font-size: 13px; } */
+
+  /*.v-select { height: 35px; font-size: 13px;}*/
+
+  .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: black;
+  }
+
+  .theme--light.v-label {
+    color: gray;
+  }
+
+  .theme--light.v-input:not(.v-input--is-disabled) input, .theme--light.v-input:not(.v-input--is-disabled) textarea {
+    color: black;
+  }
+  
+  .v-label--active {
+    transform: translateY(-17px) scale(1) !important;
+    font-size: 11px !important;       
+  } 
+
+  /*
+  .v-input--is-label:not(active) {
+    font-size: 30px !important;
+  }
+  */
+
+  .v-label.theme--light{
+    /*color: black;*/
+    font-size: 11px;
+  }
+
+  .v-input {
+    font-size: 13px;
+  }
+
+  .v-select {
+    font-size: 13px;
+  }
+
+  .checkbox_acoes { margin-left: 10px; margin-right: 20px }
+
+  .subheader_fieldset { font-size: 20px; color: black; margin-top: -35px }
+  
+  .div_fieldset { width: 70px; font-size: 13px; background-color: white; text-align: center }
+
+  .v-data-table__wrapper td {
+    font-weight: 500;
+    font-size: 11px !important;
+  }
+
+  .campo_texto { height: 36px; font-size: 13px; }
+
+  .tituloFieldSet {
+    margin-top: -20px; width: 50px; background-color: white; font-size: 12px; text-align: center
+  }
+
+  /*.row { height: auto !important}*/
+
+/* estilo para as tabs */
+.tabs {
+  overflow: hidden;
+  margin-left: 20px;
+  margin-bottom: -2px;
+}
+
+.tabs ul {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+.tabs a{
+  float: left;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: background-color 0.2s;
+  border: 1px solid gray;
+  border-right: none;
+  background-color: #dddddd;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+}
+
+.tabs a:last-child { 
+  border-right: 1px solid gray;
+}
+
+/* mudar a cor quando estiver com estado 'on hover' ou 'com o mouse sobre a tab' */
+.tabs a:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+/* estilo para tab ativa */
+.tabs a.active {
+  background-color: #fff;
+  color: #484848;
+  border-bottom: 2px solid #fff;
+  cursor: default;
+}
+
+/* estilo geral para as tabs */
+.tabcontent {
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 10px 0px 0px 0px;
+  box-shadow: 3px 3px 6px #544949;
+}
+
+/* texto flexível dentro da tab */
+.texto-flex {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*  reduzir distancia entre os v-row da aplicação */
+.row+.row {
+  margin-top: 5px;
+}
+
+.v-expansion-panel-header.v-expansion-panel-header--active { 
+  color: white; background-color: #01674E;
+  font-size: 13px;
+}
+
+.v-expansion-panel--active:not(:first-child).v-expansion-panel--active.v-expansion-panel {
+    margin-top: 0px;
+}
+
+.v-expansion-panel-content__wrap {
+  margin-top: 0px;
+  margin-top: -15px;
+}
+
+</style>
